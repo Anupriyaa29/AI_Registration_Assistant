@@ -1,0 +1,60 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey",
+        "Good morning",
+        "Good evening"
+      ],
+      "responses": [
+        "Hello! Welcome to the AI Registration Assistant.",
+        "Hi! How can I help you today?"
+      ]
+    },
+
+    {
+      "tag": "registration",
+      "patterns": [
+        "I want to register",
+        "Register me",
+        "Apply for internship",
+        "Join internship",
+        "Sign me up"
+      ],
+      "responses": [
+        "Sure! Let's start your registration.",
+        "I'd be happy to help you register."
+      ]
+    },
+
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "Goodbye",
+        "See you",
+        "Catch you later"
+      ],
+      "responses": [
+        "Goodbye!",
+        "Have a great day!"
+      ]
+    },
+
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Thank you",
+        "Thanks",
+        "Thank you so much"
+      ],
+      "responses": [
+        "You're welcome!",
+        "Happy to help!"
+      ]
+    }
+  ]
+}
