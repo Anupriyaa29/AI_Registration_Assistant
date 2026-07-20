@@ -1,6 +1,8 @@
 import json
+import joblib
 from utils.preprocess import preprocess
 from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.naive_bayes import MultinomialNB
 
 with open("data/intents.json", "r") as file:
     data = json.load(file)
@@ -19,14 +21,12 @@ for intent in data["intents"]:
         tags.append(intent["tag"])
 
 vectorizer = CountVectorizer()
-
 X = vectorizer.fit_transform(patterns)
 
-print("Vocabulary:")
-print(vectorizer.vocabulary_)
+model = MultinomialNB()
+model.fit(X, tags)
 
-print()
+joblib.dump(model, "model.pkl")
+joblib.dump(vectorizer, "vectorizer.pkl")
 
-print("Bag of Words Matrix:")
-
-print(X.toarray())
+print("Model trained and saved successfully!")

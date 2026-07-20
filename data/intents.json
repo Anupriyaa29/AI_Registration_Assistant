@@ -3,12 +3,22 @@
     {
       "tag": "greeting",
       "patterns": [
-        "Hi",
-        "Hello",
-        "Hey",
-        "Good morning",
-        "Good evening"
-      ],
+    "Hi",
+    "Hello",
+    "Hey",
+    "Good morning",
+    "Good evening",
+    "Greetings",
+    "Hi there",
+    "Hello there",
+    "Nice to meet you",
+    "Hey buddy",
+    "Good afternoon",
+    "What's up",
+    "Hi AI",
+    "Hello assistant",
+    "Can you help me"
+],
       "responses": [
         "Hello! Welcome to the AI Registration Assistant.",
         "Hi! How can I help you today?"
