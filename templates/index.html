@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Registration Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h1>AI Registration Assistant</h1>
+
+<div id="chat-box">
+</div>
+
+<input
+type="text"
+id="user-input"
+placeholder="Type your message...">
+
+<button>
+Send
+</button>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
