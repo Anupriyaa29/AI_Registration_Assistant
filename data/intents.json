@@ -28,11 +28,26 @@
     {
       "tag": "registration",
       "patterns": [
-        "I want to register",
-        "Register me",
-        "Apply for internship",
-        "Join internship",
-        "Sign me up"
+    "register",
+    "registration",
+    "register me",
+    "i want to register",
+    "i want registration",
+    "can i register",
+    "help me register",
+    "register now",
+    "please register me",
+    "registration process",
+    "start registration",
+    "start my registration",
+    "begin registration",
+    "i need registration",
+    "enroll me",
+    "sign me up",
+    "apply for registration",
+    "complete registration",
+    "i want to enroll",
+    "new registration"
       ],
       "responses": [
         "Sure! Let's start your registration.",
@@ -42,12 +57,22 @@
 
     {
       "tag": "goodbye",
-      "patterns": [
-        "Bye",
-        "Goodbye",
-        "See you",
-        "Catch you later"
-      ],
+      "patterns":[
+    "Bye",
+    "Goodbye",
+    "See you",
+    "See you later",
+    "Catch you later",
+    "Bye bye",
+    "Take care",
+    "Have a nice day",
+    "I am leaving",
+    "Exit",
+    "Quit",
+    "Close chat",
+    "End chat",
+    "Talk later"
+],
       "responses": [
         "Goodbye!",
         "Have a great day!"
@@ -55,16 +80,47 @@
     },
 
     {
-      "tag": "thanks",
-      "patterns": [
+    "tag": "thanks",
+    "patterns": [
         "Thank you",
         "Thanks",
-        "Thank you so much"
-      ],
-      "responses": [
+        "Thank you so much",
+        "Thanks a lot",
+        "Appreciate it",
+        "Great thanks",
+        "Awesome thanks",
+        "Thank you bot",
+        "Many thanks",
+        "Thanks buddy",
+        "Thanks for helping",
+        "Much appreciated"
+    ],
+    "responses": [
         "You're welcome!",
-        "Happy to help!"
-      ]
-    }
+        "Happy to help!",
+        "Anytime!",
+        "Glad I could help!"
+    ]
+},
+{
+    "tag": "help",
+    "patterns": [
+        "Help",
+        "Can you help me",
+        "I need help",
+        "Support",
+        "Guide me",
+        "Can you assist me",
+        "How does this work",
+        "What can you do",
+        "Tell me what you do",
+        "Need assistance"
+    ],
+    "responses": [
+        "I can help you with registration.",
+        "I can guide you through the registration process.",
+        "Ask me anything related to registration."
+    ]
+}
   ]
 }
