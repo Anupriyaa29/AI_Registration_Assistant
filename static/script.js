@@ -9,7 +9,11 @@ async function sendMessage(){
 
     const chatBox=document.getElementById("chat-box");
 
-    chatBox.innerHTML += "<p><b>You:</b> "+message+"</p>";
+    chatBox.innerHTML += `
+    <div class="user-message">
+    ${message}
+    </div>
+   `;
 
     const response=await fetch("/chat",{
 
@@ -29,9 +33,44 @@ async function sendMessage(){
 
     const data=await response.json();
 
-    chatBox.innerHTML += "<p><b>Bot:</b> "+data.response+"</p>";
-
+    chatBox.innerHTML += `
+    <div class="bot-message">
+    ${data.response}
+    </div>
+    `;
     input.value="";
 
     chatBox.scrollTop=chatBox.scrollHeight;
+}
+
+document
+.getElementById("user-input")
+.addEventListener("keypress",function(event){
+
+    if(event.key==="Enter"){
+
+        sendMessage();
+
+    }
+
+});
+
+document.getElementById("user-input").focus();
+
+window.onload=function(){
+
+document.getElementById("chat-box").innerHTML=`
+
+<div class="bot-message">
+
+Hello 👋
+
+Welcome to the AI Registration Assistant.
+
+How can I help you today?
+
+</div>
+
+`;
+
 }

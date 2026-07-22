@@ -12,21 +12,32 @@
 
 <body>
 
-<h1>AI Registration Assistant</h1>
+<div class="container">
 
-<div id="chat-box">
+    <div class="chat-container">
+
+        <div class="chat-header">
+            AI Registration Assistant
+        </div>
+
+        <div id="chat-box"></div>
+
+        <div class="input-area">
+
+            <input
+                type="text"
+                id="user-input"
+                placeholder="Type your message..."
+            >
+
+            <button onclick="sendMessage()">
+                Send
+            </button>
+
+        </div>
+
+    </div>
+
 </div>
-
-<input
-type="text"
-id="user-input"
-placeholder="Type your message...">
-
-<button onclick="sendMessage()">
-    Send
-</button>
-
-<script src="{{ url_for('static', filename='script.js') }}"></script>
-
 </body>
 </html>
