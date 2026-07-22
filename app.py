@@ -2,6 +2,26 @@ from flask import Flask, render_template, request, jsonify
 import json
 import random
 import joblib
+import sqlite3
+
+def init_db():
+    conn = sqlite3.connect("database.db")
+
+    cursor = conn.cursor()
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS registrations(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT,
+        email TEXT,
+        phone TEXT,
+        college TEXT,
+        course TEXT
+    )
+    """)
+
+    conn.commit()
+    conn.close()
 
 registration_state = {}
 
@@ -71,6 +91,21 @@ def chat():
     
     if registration_state.get("step") == "course":
         registration_data["course"] = user_input
+        conn = sqlite3.connect("database.db")
+        cursor = conn.cursor()
+        cursor.execute("""INSERT INTO registrations
+                       (name,email,phone,college,course)
+                       VALUES (?,?,?,?,?)
+                       """,
+                       (
+                           registration_data["name"],
+                           registration_data["email"],
+                           registration_data["phone"],
+                           registration_data["college"],
+                           registration_data["course"]
+                        ))
+        conn.commit()
+        conn.close()
         registration_state["step"] = None
         return jsonify({"response": f"Registration Complete!\n\n"
             f"Name: {registration_data['name']}\n"
@@ -90,5 +125,24 @@ def chat():
 
     return jsonify({"response": response})
 
+@app.route("/admin")
+def admin():
+
+    conn = sqlite3.connect("database.db")
+
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT * FROM registrations")
+
+    registrations = cursor.fetchall()
+
+    conn.close()
+
+    return render_template(
+        "admin.html",
+        registrations=registrations
+    )
+
 if __name__ == "__main__":
+    init_db()
     app.run(debug=True)
