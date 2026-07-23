@@ -62,12 +62,15 @@ window.onload=function(){
 document.getElementById("chat-box").innerHTML=`
 
 <div class="bot-message">
+Welcome to the AI Registration Assistant!
 
-Hello 👋
+I can help you:
 
-Welcome to the AI Registration Assistant.
+• Register as a student
+• Guide you through the registration process
+• Answer basic registration-related questions
 
-How can I help you today?
+Type "register" to begin.
 
 </div>
 
