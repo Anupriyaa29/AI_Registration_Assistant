@@ -40,6 +40,8 @@ AI_Registration_Assistant/
 ├── app.py
 ├── chatbot.py
 ├── train.py
+├── clear_database.py
+├── view_db.py
 ├── requirements.txt
 ├── model.pkl
 ├── vectorizer.pkl
@@ -58,6 +60,12 @@ AI_Registration_Assistant/
 ├── static/
 │   ├── style.css
 │   └── script.js
+│
+├── Screenshots/
+│   ├── home.png
+│   ├── registration-success.png
+│   ├── validation.png
+│   └── admin-dashboard.png
 │
 └── README.md
 ```
@@ -82,6 +90,7 @@ cd AI_Registration_Assistant
 
 ```bash
 pip install -r requirements.txt
+python -m nltk.downloader punkt stopwords wordnet
 ```
 
 ### Train the model
@@ -130,13 +139,12 @@ Bot: Registration completed successfully!
 
 ## Screenshots
 
-Add screenshots of:
+Here are sample screenshots from the application:
 
-- Home Page
-- Chat Interface
-- Registration Process
-- Validation Messages
-- Admin Dashboard
+- Home Page: ![Home Page](Screenshots/home.png)
+- Registration Success: ![Registration Success](Screenshots/registration-success.png)
+- Validation Messages: ![Validation](Screenshots/validation.png)
+- Admin Dashboard: ![Admin Dashboard](Screenshots/admin-dashboard.png)
 
 ---
 
